@@ -57,20 +57,22 @@ class AbsolutePositionalEncoder(nn.Module):
         return self.positional_encoding[:batch_size, :seq_len, :]
 
 
-# Example usage:
-# Initialize TransformerEmbedding instance
-vocab_size = 100256  # Example vocabulary size
-embedding_dim = 512  # Example embedding dimensionality
+# # Example usage:
+# # Initialize TransformerEmbedding instance
+# vocab_size = 100256  # Example vocabulary size
+# embedding_dim = 512  # Example embedding dimensionality
+#
+# input_embedding = InputEmbedding(vocab_size, embedding_dim)
+# positional_encoding = PositionalEncoding(embedding_dim)
+#
+# # Example tokens
+# tokens = torch.tensor([15339, 0, 32])  # Example tokens
+#
+# # Get embeddings for tokens
+# input_embeddings = input_embedding(tokens)
+# embeddings = positional_encoding(input_embeddings)
+#
+# print("Embedding", input_embeddings.shape)
+#
+# print("Embeddings shape:", embeddings.shape)
 
-input_embedding = InputEmbedding(vocab_size, embedding_dim)
-positional_encoding = PositionalEncoding(embedding_dim)
-
-# Example tokens
-tokens = torch.tensor([15339, 0, 32])  # Example tokens
-
-# Get embeddings for tokens
-input_embeddings = input_embedding(tokens)
-embeddings = positional_encoding(input_embeddings)
-
-print("Embedding", embeddings)
-print("Embeddings shape:", embeddings.shape)
